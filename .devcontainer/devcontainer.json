@@ -1,0 +1,35 @@
+{
+  "name": "AI Video Workstation - Claude & HyperFrames",
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    }
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Open private desktop (XFCE/noVNC)",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "START_HERE_AR.md",
+        "DESKTOP_ACCESS.md"
+      ]
+    },
+    "vscode": {
+      "extensions": ["Anthropic.claude-code"]
+    }
+  },
+  "postCreateCommand": "bash scripts/install.sh",
+  "postStartCommand": "bash scripts/start-desktop.sh"
+}

@@ -1,0 +1,25 @@
+# Private data and credentials
+DESKTOP_ACCESS.md
+.private/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated videos
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.webm
+
+# Local projects
+video-projects/*
+!video-projects/.gitkeep
+
+# Runtime artifacts
+*.log
+.DS_Store
+AI-Video-Workstation-Template.zip
